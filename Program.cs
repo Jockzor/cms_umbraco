@@ -1,3 +1,6 @@
+using cms_umbraco.Business.ScheduledJobs;
+using cms_umbraco.Business.ScheduledJobs.Interfaces;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -6,6 +9,7 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .Build();
 
+builder.Services.AddScoped<IMoviesJob, MoviesJob>();
 WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();

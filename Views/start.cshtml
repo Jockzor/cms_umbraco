@@ -1,0 +1,8 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using cms_umbraco.Views
+@inherits UmbracoViewPage<StartPageViewModel>
+@{
+	Layout = "root.cshtml";
+}
+
+<h1> @Html.Raw(Model.Heading) </h1>
